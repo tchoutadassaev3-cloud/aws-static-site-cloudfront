@@ -28,7 +28,7 @@ During this project, I faced real-world challenges such as:
 
 And I successfully diagnosed and resolved each of them.
 
-👉 This is not just a tutorial project — it is a real deployment scenario.
+👉 This is not just a tutorial project, it is a real deployment scenario.
 
 ---
 
