@@ -11,20 +11,20 @@
 
 When I started learning AWS, deploying a real-world application felt complex and overwhelming.
 
-Instead of just following tutorials, I decided to build a complete production-ready project from scratch — something that reflects real industry practices.
+Instead of just following tutorials, I decided to build a complete production-ready project from scratch something that reflects real industry practices.
 
 This project demonstrates my ability to:
 
-Deploy a static website using AWS
-Configure a global CDN with CloudFront
-Secure the application using HTTPS (ACM)
-Connect and manage a real custom domain
+- Deploy a static website using AWS
+- Configure a global CDN with CloudFront
+- Secure the application using HTTPS (ACM)
+- Connect and manage a real custom domain
 
 During this project, I faced real-world challenges such as:
 
-❌ S3 Access Denied errors
-❌ DNS misconfiguration issues
-❌ SSL validation delays
+- ❌ S3 Access Denied errors
+- ❌ DNS misconfiguration issues
+- ❌ SSL validation delays
 
 And I successfully diagnosed and resolved each of them.
 
@@ -217,7 +217,7 @@ The goal was to build a **scalable, secure, and globally distributed web applica
 
 ---
 
-# 📌 Conclusion
+# 📌 What I learned
 
 This project demonstrates the ability to design and deploy a **secure, scalable, and production-ready web architecture on AWS**.
 
