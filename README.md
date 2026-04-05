@@ -1,184 +1,206 @@
-AWS Static Website Deployment (S3 + CloudFront + Custom Domain + HTTPS)
+# 🚀 AWS Static Website Deployment (S3 + CloudFront + ACM + Custom Domain)
 
- Project Overview
+## 🌐 Live Demo
 
-This project demonstrates a **production-ready deployment of a static website on AWS**, using industry best practices.
-
-The architecture includes:
-
-* **Amazon S3** for static website hosting
-* **Amazon CloudFront** as a CDN (Content Delivery Network)
-* **AWS Certificate Manager (ACM)** for HTTPS (SSL/TLS)
-* **Custom domain (Namecheap)** for public access
-* **DNS configuration** for domain routing
-
----
-
-## 🌍 Live Website
-
-🔗 https://soscompany.co
-🔗 https://www.soscompany.co
+👉 https://soscompany.co  
+👉 https://www.soscompany.co  
 
 ---
 
 ## 🏗️ Architecture Overview
 
-* Static files are hosted in an S3 bucket
-* CloudFront distributes content globally with caching
-* ACM provides a secure SSL certificate (HTTPS)
-* Namecheap DNS connects the domain to CloudFront
+![Architecture](./architecture/26-architecture-diagram.png)
 
 ---
 
-## 📸 Project Walkthrough (Step-by-Step)
+## 🎯 Project Overview
 
-### 🖥️ Local Development
+This project demonstrates the deployment of a **production-ready static website** using AWS services.
 
-* 01-project-structure-local.png
-* 02-local-development-preview.png
-* 03-production-build-dist-folder.png
+The goal was to build a **scalable, secure, and globally distributed web application** using:
 
----
-
-### 🐙 GitHub Repository Setup
-
-* 04-github-repository-created.png
-* 05-github-project-structure.png
+- Amazon S3 (static hosting)
+- Amazon CloudFront (CDN)
+- AWS Certificate Manager (SSL/TLS)
+- Custom domain via Namecheap
 
 ---
 
-### ☁️ Amazon S3 Configuration
+## ⚙️ Tech Stack
 
-* 06-s3-bucket-created.png
-* 07-s3-files-uploaded.png
-* 08-s3-static-hosting-enabled.png
-* 08-s3-static-hosting-enabled-2.png
-* 09-s3-website-first-test.png
-* 10-s3-bucket-policy-public.png
-* 11-s3-website-live.png
-
----
-
-### 🌐 CloudFront Setup
-
-* 12-cloudfront-get-started.png
-* 13-cloudfront-origin-configuration.png
-* 14-cloudfront-security-settings.png
-* 15-cloudfront-distribution-deploying.png
-* 16-cloudfront-website-live.png
-* 17-cloudfront-default-root-fixed.png
-* 23-cloudfront-domain-config.png
+- **Frontend**: HTML, CSS, JavaScript (Vite build)
+- **Cloud Provider**: AWS
+- **Storage**: Amazon S3
+- **CDN**: Amazon CloudFront
+- **SSL**: AWS Certificate Manager (ACM)
+- **DNS**: Namecheap
 
 ---
 
-### 🔐 SSL Certificate (ACM)
-
-* 18-acm-dashboard.png
-* 19-acm-domain-names.png
-* 20-acm-cname-records-1.png
-* 20-acm-cname-records-2.png
-* 21-namecheap-acm-validation.png
-* 22-acm-certificate-issued.png
+# 🧩 Step-by-Step Deployment
 
 ---
 
-### 🌍 DNS Configuration (Namecheap)
+## 1️⃣ Local Development & Build
 
-* 24-dns-namecheap-cloudfront.png
+### Project structure
+![Step 1](./screenshots/01-project-structure-local.png)
 
----
+### Local preview
+![Step 2](./screenshots/02-local-development-preview.png)
 
-### 🎉 Final Result
-
-* 25-final-domain-working.png
-
----
-
-## ⚙️ Technologies Used
-
-* Amazon S3
-* Amazon CloudFront
-* AWS Certificate Manager (ACM)
-* Namecheap DNS
-* Git & GitHub
+### Production build
+![Step 3](./screenshots/03-production-build-dist-folder.png)
 
 ---
 
-## 🔐 Key Features Implemented
+## 2️⃣ GitHub Repository Setup
 
-* Static website hosting on S3
-* Global CDN distribution with CloudFront
-* HTTPS secured website using ACM
-* Custom domain integration
-* DNS configuration via Namecheap
-* Public access configuration via bucket policy
-* Default root object handling (index.html)
+### Repository created
+![Step 4](./screenshots/04-github-repository-created.png)
+
+### Project structure on GitHub
+![Step 5](./screenshots/05-github-project-structure.png)
 
 ---
 
-## 🧠 Key Learnings
+## 3️⃣ Amazon S3 Setup
 
-* How to deploy a static website on AWS
-* How to configure CloudFront for performance and security
-* How to issue and validate SSL certificates with ACM
-* How DNS works with external providers (Namecheap)
-* How to connect a custom domain to AWS infrastructure
-* Understanding caching and CDN behavior
+### Bucket creation
+![Step 6](./screenshots/06-s3-bucket-created.png)
 
----
+### Files uploaded
+![Step 7](./screenshots/07-s3-files-uploaded.png)
 
-## ⚠️ Challenges Faced & Solutions
+### Static hosting enabled
+![Step 8](./screenshots/08-s3-static-hosting-enabled-1.png)
+![Step 8](./screenshots/08-s3-static-hosting-enabled-2.png)
 
-### ❌ 403 Forbidden Error (S3)
+### First test (before permissions)
+![Step 9](./screenshots/09-s3-website-first-test.png)
 
-✔️ Fixed by configuring correct bucket policy and public access
+### Public bucket policy
+![Step 10](./screenshots/10-s3-bucket-policy-public.png)
 
-### ❌ Domain not resolving
-
-✔️ Fixed by properly configuring CNAME records in Namecheap
-
-### ❌ SSL Validation delay
-
-✔️ Resolved by correcting CNAME host format for subdomain
-
-### ❌ CloudFront default root issue
-
-✔️ Fixed by setting `index.html` as default root object
-
-
-## 💡 Best Practices Applied
-
-* Separation between origin (S3) and distribution (CloudFront)
-* Secure HTTPS configuration
-* CDN optimization for performance
-* Clean GitHub structure for documentation
-* Step-by-step deployment tracking with screenshots
+### Website working (S3 endpoint)
+![Step 11](./screenshots/11-s3-website-live.png)
 
 ---
 
-## 🚀 Future Improvements
+## 4️⃣ CloudFront (CDN Setup)
 
-* CI/CD pipeline using GitHub Actions
-* Route 53 integration
-* Custom error pages (404 / 403)
-* Infrastructure as Code (Terraform or CloudFormation)
+### Get started
+![Step 12](./screenshots/12-cloudfront-get-started.png)
+
+### Origin configuration
+![Step 13](./screenshots/13-cloudfront-origin-configuration.png)
+
+### Security settings
+![Step 14](./screenshots/14-cloudfront-security-settings.png)
+
+### Distribution deploying
+![Step 15](./screenshots/15-cloudfront-distribution-deploying.png)
+
+### CloudFront live
+![Step 16](./screenshots/16-cloudfront-website-live.png)
+
+### Default root object fix
+![Step 17](./screenshots/17-cloudfront-default-root-fixed.png)
 
 ---
 
-## 👨‍💻 Author
+## 5️⃣ SSL Certificate (ACM)
 
-Cloud & DevOps Enthusiast
-AWS-focused projects for real-world deployment scenarios
+### ACM Dashboard
+![Step 18](./screenshots/18-acm-dashboard.png)
+
+### Domain configuration
+![Step 19](./screenshots/19-acm-domain-names.png)
+
+### CNAME records (AWS)
+![Step 20](./screenshots/20-acm-cname-records-1.png)
+![Step 20](./screenshots/20-acm-cname-records-2.png)
+
+### DNS validation (Namecheap)
+![Step 21](./screenshots/21-namecheap-acm-validation.png)
+
+### Certificate issued
+![Step 22](./screenshots/22-acm-certificate-issued.png)
 
 ---
 
-## 📌 Summary
+## 6️⃣ Custom Domain + HTTPS
 
-This project demonstrates the ability to:
+### CloudFront domain configuration
+![Step 23](./screenshots/23-cloudfront-domain-config.png)
 
-✔ Deploy scalable static websites
-✔ Configure CDN and HTTPS
-✔ Manage DNS and domains
-✔ Work with core AWS services
+### DNS setup (Namecheap → CloudFront)
+![Step 24](./screenshots/24-dns-namecheap-cloudfront.png)
 
-👉 This is a **real-world production-ready setup** suitable for modern web applications.
+### Final result (HTTPS working)
+![Step 25](./screenshots/25-final-domain-working.png)
+
+---
+
+# 🔥 Key Features
+
+- ✅ Static website hosting with S3  
+- ✅ Global CDN with CloudFront  
+- ✅ HTTPS secured with ACM  
+- ✅ Custom domain integration  
+- ✅ High performance & low latency  
+- ✅ Production-ready deployment  
+
+---
+
+# 🧠 Challenges & Solutions
+
+### ❌ S3 Access Denied (403)
+✔️ Fixed by applying a public bucket policy
+
+### ❌ CloudFront not loading index.html
+✔️ Fixed by setting **Default Root Object**
+
+### ❌ SSL validation stuck
+✔️ Fixed DNS CNAME configuration in Namecheap
+
+### ❌ Git push rejected
+✔️ Solved using `git pull --rebase`
+
+---
+
+# 💼 Skills Demonstrated
+
+- AWS S3 configuration
+- CDN architecture (CloudFront)
+- DNS management (Namecheap)
+- SSL/TLS setup (ACM)
+- Debugging production issues
+- Git & GitHub workflow
+- End-to-end cloud deployment
+
+---
+
+# 🚀 Future Improvements
+
+- CI/CD pipeline (GitHub Actions)
+- Infrastructure as Code (Terraform)
+- Monitoring (CloudWatch)
+- Logging & alerting
+- Route 53 integration
+- WAF security layer
+
+---
+
+# 📌 Conclusion
+
+This project demonstrates the ability to design and deploy a **secure, scalable, and production-ready web architecture on AWS**.
+
+It highlights real-world problem-solving, cloud best practices, and DevOps fundamentals.
+
+---
+
+# 👨‍💻 Author
+
+**Dassaev TCHOUTA**  
+Cloud / DevOps Enthusiast 🚀
