@@ -11,7 +11,7 @@ However, over time, I realized that mastering AWS is not only about using indivi
 
 This realization led me to start building and documenting my projects as part of a structured portfolio.
 
-This repository is part of that journey — a series of hands-on projects where I focus on:
+This repository is part of that journey a series of hands-on projects where I focus on:
 
 - building real-world cloud architectures,
 - documenting every step clearly,
@@ -25,8 +25,8 @@ This project demonstrates how to deploy a **secure, scalable, and globally distr
 
 It is structured into two complementary parts:
 
-- **Part 1 — Manual Deployment:** building and deploying the infrastructure step by step using core AWS services.
-- **Part 2 — CI/CD Automation:** automating the entire deployment pipeline using GitHub Actions.
+- **Part 1 - Manual Deployment:** building and deploying the infrastructure step by step using core AWS services.
+- **Part 2 - CI/CD Automation:** automating the entire deployment pipeline using GitHub Actions.
 
 The goal is to demonstrate a full progression:
 
