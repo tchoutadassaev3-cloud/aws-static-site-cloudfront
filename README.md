@@ -94,13 +94,13 @@ This approach ensures a solid foundation before moving to automation.
 ## 1️⃣ Local Development & Build
 
 ### Project structure
-![Step 20-1](./screenshots/screenshots-projet-1/20-acm-cname-records-1.png)
+![Step 1](./screenshots/screenshots-projet-1/01-project-structure-local.png)
 
 ### Local preview
-![Step 2](./screenshots-projet-1/02-local-development-preview.png)
+![Step 2](./screenshots/screenshots-projet-1/02-local-development-preview.png)
 
 ### Production build
-![Step 3](./screenshots-projet-1/03-production-build-dist-folder.png)
+![Step 3](./screenshots/screenshots-projet-1/03-production-build-dist-folder.png)
 
 ---
 
