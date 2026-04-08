@@ -231,8 +231,212 @@ This approach ensures a solid foundation before moving to automation.
 
 ---
 
-# 🔄 Next Step — CI/CD Automation
+# 🔄 Transition to CI/CD Automation
 
-After completing the manual deployment, the next step is to automate the entire workflow using GitHub Actions.
+While the manual deployment provided a strong understanding of the architecture, it also highlighted its limitations in terms of scalability and efficiency.
 
-👉 This will be covered in **Part 2**.
+In real-world environments, deployments must be automated, repeatable, and reliable.
+
+Manually uploading files, configuring services, and updating infrastructure does not scale and increases the risk of human error.
+
+This leads to the next phase of the project: **automating the entire deployment workflow using CI/CD practices with GitHub Actions**.
+
+---
+
+# 🚀 Part 2 — CI/CD Automation with GitHub Actions
+
+## 🔄 From Manual Deployment to Automation
+
+After successfully completing the manual deployment in Part 1, the next logical step was to eliminate repetitive tasks and improve deployment efficiency.
+
+While the manual setup provided a deep understanding of the infrastructure, it is not practical for continuous delivery in real-world production environments.
+
+This phase focuses on transforming the deployment process into a fully automated pipeline.
+
+### 🎯 Objectives
+
+- Automate the build and deployment process  
+- Reduce manual intervention  
+- Ensure consistent and reliable deployments  
+- Align the project with real-world DevOps practices  
+
+---
+
+## ⚙️ CI/CD Architecture Overview
+
+![CI/CD Architecture](./architecture/16-ci-cd-architecture.png)
+
+### 🔁 Pipeline Workflow
+
+The CI/CD pipeline follows a standard DevOps workflow:
+
+1. Developer pushes code to GitHub  
+2. GitHub Actions workflow is triggered automatically  
+3. The application is built  
+4. Files are deployed to Amazon S3  
+5. CloudFront cache is invalidated  
+6. The website is updated instantly  
+
+---
+
+## 🧪 Step 1 — Code Update (Local)
+
+To validate the pipeline, I introduced a change in the homepage content locally.
+
+![Code Change](./screenshots/screenshots-projet-2/02-code-change-local-editor.png)
+
+---
+
+## 💻 Step 2 — Local Preview
+
+Before pushing changes, I verified the update locally to ensure everything was working as expected.
+
+![Local Preview](./screenshots/screenshots-projet-2/03-local-preview-after-change.png)
+
+---
+
+## 🔐 Step 3 — AWS IAM Setup
+
+To allow GitHub Actions to securely interact with AWS services:
+
+### IAM User Creation
+
+![IAM User](./screenshots/screenshots-projet-2/04-iam-user-created-1.png)
+![IAM User 2](./screenshots/screenshots-projet-2/04-iam-user-created-2.png)
+
+### IAM Policy (S3 + CloudFront Access)
+
+![IAM Policy](./screenshots/screenshots-projet-2/05-iam-permissions-policy.png)
+
+---
+
+## 🔑 Step 4 — AWS Credentials
+
+Access keys were generated and used for secure authentication between GitHub Actions and AWS.
+
+![Access Keys](./screenshots/screenshots-projet-2/06-aws-access-keys-created.png)
+
+---
+
+## 🔒 Step 5 — GitHub Secrets Configuration
+
+Sensitive credentials were securely stored using GitHub Secrets.
+
+![GitHub Secrets](./screenshots/screenshots-projet-2/07-github-actions-secrets-configured.png)
+
+---
+
+## 🌐 Step 6 — CloudFront Distribution ID
+
+The distribution ID is required to trigger cache invalidation after deployment.
+
+![Distribution ID](./screenshots/screenshots-projet-2/08-cloudfront-distribution-id.png)
+
+---
+
+## ⚙️ Step 7 — GitHub Actions Workflow Setup
+
+### Workflow File Creation
+
+![Workflow File](./screenshots/screenshots-projet-2/09-github-workflow-file-created.png)
+
+### Pipeline Configuration (`deploy.yml`)
+
+![YAML Config](./screenshots/screenshots-projet-2/10-deploy-yml-content.png)
+
+---
+
+## 🚀 Step 8 — Pipeline Execution
+
+### Workflow Triggered
+
+![Triggered](./screenshots/screenshots-projet-2/11-github-actions-workflow-triggered.png)
+
+### Pipeline Running
+
+![Running 1](./screenshots/screenshots-projet-2/12-github-actions-job-running-1.png)
+![Running 2](./screenshots/screenshots-projet-2/12-github-actions-job-running-2.png)
+
+### Pipeline Success ✅
+
+![Success](./screenshots/screenshots-projet-2/13-github-actions-job-success.png)
+
+---
+
+## 🌍 Step 9 — Live Website Updated
+
+After the pipeline execution, the changes were instantly reflected on the live website.
+
+![Live Update](./screenshots/screenshots-projet-2/14-live-site-updated-after-cicd.png)
+
+---
+
+## ⚡ Step 10 — CloudFront Cache Invalidation
+
+CloudFront cache was successfully invalidated to ensure that users always receive the latest version of the website.
+
+![Cache Refresh](./screenshots/screenshots-projet-2/15-cloudfront-cache-refresh-success.png)
+
+---
+
+## 🎯 Final Result
+
+The deployment process is now fully automated.
+
+Instead of manually uploading files to S3, the system:
+
+- builds automatically  
+- deploys automatically  
+- updates instantly  
+- ensures consistency across deployments  
+
+---
+
+## 💡 Key Benefits
+
+- 🚀 Faster and more reliable deployments  
+- 🔒 Secure credential management with GitHub Secrets  
+- 🔁 Fully automated workflow  
+- 🌍 Production-ready deployment pipeline  
+- ⚙️ Real-world DevOps practices  
+
+---
+
+## 🧠 What This Demonstrates
+
+This project now showcases:
+
+- AWS (S3, CloudFront, ACM)  
+- CI/CD pipeline design  
+- GitHub Actions automation  
+- IAM security best practices  
+- End-to-end deployment workflow  
+
+---
+
+# 📌 Final Conclusion
+
+This project demonstrates a complete end-to-end approach to cloud deployment on AWS.
+
+Starting from a manual setup to fully understand each component, and evolving into a fully automated CI/CD pipeline, it reflects a real-world DevOps workflow.
+
+It highlights my ability to:
+
+- design scalable cloud architectures  
+- deploy production-ready applications  
+- automate workflows using CI/CD practices  
+- apply security and best practices in a real environment  
+
+This project is part of a broader initiative to build and document real-world cloud solutions, showcasing both technical depth and practical implementation skills.
+
+---
+
+# 👨‍💻 Author
+
+**Dassaev TCHOUTA**  
+Cloud & DevOps Engineer  
+
+- AWS | Cloud Architecture | CI/CD | Automation  
+- Passionate about building scalable and production-ready systems  
+
+📫 Open to opportunities and collaborations
