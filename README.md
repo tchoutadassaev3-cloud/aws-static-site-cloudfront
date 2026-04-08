@@ -1,173 +1,198 @@
-# 🚀 AWS Static Website Deployment (S3 + CloudFront + ACM + Custom Domain)
+# 🚀 End-to-End AWS Static Website Deployment  
+## From Manual Setup to CI/CD Automation
 
-## 🌐 Live Demo
+---
+
+## 📖 Introduction
+
+With several years of experience working with AWS, I have had the opportunity to interact with a wide range of cloud services in different contexts.
+
+However, over time, I realized that mastering AWS is not only about using individual services, but about **designing complete, production-ready systems and being able to clearly demonstrate that expertise**.
+
+This realization led me to start building and documenting my projects as part of a structured portfolio.
+
+This repository is part of that journey — a series of hands-on projects where I focus on:
+
+- building real-world cloud architectures,
+- documenting every step clearly,
+- and showcasing my ability to design, deploy, and automate scalable systems.
+
+---
+
+## 🎯 Project Overview
+
+This project demonstrates how to deploy a **secure, scalable, and globally distributed static website on AWS**, following real-world practices.
+
+It is structured into two complementary parts:
+
+- **Part 1 — Manual Deployment:** building and deploying the infrastructure step by step using core AWS services.
+- **Part 2 — CI/CD Automation:** automating the entire deployment pipeline using GitHub Actions.
+
+The goal is to demonstrate a full progression:
+
+> from manual cloud setup → to automated, production-grade deployment.
+
+---
+
+## 🌍 Live Website
 
 👉 https://soscompany.co  
 👉 https://www.soscompany.co  
 
 ---
 
-## 📖 Story Behind This Project
-
-When I started learning AWS, deploying a real-world application felt complex and overwhelming.
-
-Instead of just following tutorials, I decided to build a complete production-ready project from scratch something that reflects real industry practices.
-
-This project demonstrates my ability to:
-
-- Deploy a static website using AWS
-- Configure a global CDN with CloudFront
-- Secure the application using HTTPS (ACM)
-- Connect and manage a real custom domain
-
-During this project, I faced real-world challenges such as:
-
-- ❌ S3 Access Denied errors
-- ❌ DNS misconfiguration issues
-- ❌ SSL validation delays
-
-And I successfully diagnosed and resolved each of them.
-
-👉 This is not just a tutorial project, it is a real deployment scenario.
-
----
-
-## 🏗️ Architecture Overview
+## 🏗️ Global Architecture Overview
 
 ![Architecture](./architecture/26-architecture-diagram.png)
 
----
+This architecture follows a modern cloud pattern:
 
-## 🎯 Project Overview
+- Users access the application via a custom domain
+- DNS (Namecheap) routes traffic to CloudFront
+- CloudFront distributes content globally (low latency)
+- AWS Certificate Manager (ACM) provides HTTPS security
+- Amazon S3 stores and serves the static website
 
-This project demonstrates the deployment of a **production-ready static website** using AWS services.
+### ✅ Key Benefits
 
-The goal was to build a **scalable, secure, and globally distributed web application** using:
-
-- Amazon S3 (static hosting)
-- Amazon CloudFront (CDN)
-- AWS Certificate Manager (SSL/TLS)
-- Custom domain via Namecheap
+- High availability  
+- Global performance  
+- Secure HTTPS communication  
+- Scalable and production-ready infrastructure  
 
 ---
 
 ## ⚙️ Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript (Vite build)
-- **Cloud Provider**: AWS
-- **Storage**: Amazon S3
-- **CDN**: Amazon CloudFront
-- **SSL**: AWS Certificate Manager (ACM)
-- **DNS**: Namecheap
+- **Frontend:** HTML, CSS, JavaScript (Vite)
+- **Cloud Provider:** AWS
+- **Storage:** Amazon S3
+- **CDN:** Amazon CloudFront
+- **SSL/TLS:** AWS Certificate Manager (ACM)
+- **DNS:** Namecheap
+- **Version Control:** Git & GitHub
+- **Automation:** GitHub Actions *(Part 2)*
 
 ---
 
-# 🧩 Step-by-Step Deployment
+# 🧩 Part 1 — Manual Deployment on AWS
+
+## 📌 Part 1 Overview
+
+In this first phase, the entire infrastructure is deployed manually in order to fully understand how each AWS component works and how they integrate together in a real-world setup.
+
+Rather than abstracting the process, this step focuses on:
+
+- configuring each service from scratch,
+- understanding the underlying mechanisms,
+- and troubleshooting real deployment issues.
+
+This approach ensures a solid foundation before moving to automation.
 
 ---
 
 ## 1️⃣ Local Development & Build
 
 ### Project structure
-![Step 1](./screenshots/01-project-structure-local.png)
+![Step 1](./aws-static-site-cloudfront/screenshots-projet-1/01-project-structure-local.png)
 
 ### Local preview
-![Step 2](./screenshots/02-local-development-preview.png)
+![Step 2](./aws-static-site-cloudfront/screenshots-projet-1/02-local-development-preview.png)
 
 ### Production build
-![Step 3](./screenshots/03-production-build-dist-folder.png)
+![Step 3](./aws-static-site-cloudfront/screenshots-projet-1/03-production-build-dist-folder.png)
 
 ---
 
 ## 2️⃣ GitHub Repository Setup
 
 ### Repository created
-![Step 4](./screenshots/04-github-repository-created.png)
+![Step 4](./aws-static-site-cloudfront/screenshots-projet-1/04-github-repository-created.png)
 
 ### Project structure on GitHub
-![Step 5](./screenshots/05-github-project-structure.png)
+![Step 5](./aws-static-site-cloudfront/screenshots-projet-1/05-github-project-structure.png)
 
 ---
 
 ## 3️⃣ Amazon S3 Setup
 
 ### Bucket creation
-![Step 6](./screenshots/06-s3-bucket-created.png)
+![Step 6](./aws-static-site-cloudfront/screenshots-projet-1/06-s3-bucket-created.png)
 
 ### Files uploaded
-![Step 7](./screenshots/07-s3-files-uploaded.png)
+![Step 7](./aws-static-site-cloudfront/screenshots-projet-1/07-s3-files-uploaded.png)
 
 ### Static hosting enabled
-![Step 8](./screenshots/08-s3-static-hosting-enabled-1.png)
-![Step 8](./screenshots/08-s3-static-hosting-enabled-2.png)
+![Step 8-1](./aws-static-site-cloudfront/screenshots-projet-1/08-s3-static-hosting-enabled-1.png)
+![Step 8-2](./aws-static-site-cloudfront/screenshots-projet-1/08-s3-static-hosting-enabled-2.png)
 
 ### First test (before permissions)
-![Step 9](./screenshots/09-s3-website-first-test.png)
+![Step 9](./aws-static-site-cloudfront/screenshots-projet-1/09-s3-website-first-test.png)
 
 ### Public bucket policy
-![Step 10](./screenshots/10-s3-bucket-policy-public.png)
+![Step 10](./aws-static-site-cloudfront/screenshots-projet-1/10-s3-bucket-policy-public.png)
 
-### Website working (S3 endpoint)
-![Step 11](./screenshots/11-s3-website-live.png)
+### Website working from S3 endpoint
+![Step 11](./aws-static-site-cloudfront/screenshots-projet-1/11-s3-website-live.png)
 
 ---
 
-## 4️⃣ CloudFront (CDN Setup)
+## 4️⃣ CloudFront Setup (CDN)
 
 ### Get started
-![Step 12](./screenshots/12-cloudfront-get-started.png)
+![Step 12](./aws-static-site-cloudfront/screenshots-projet-1/12-cloudfront-get-started.png)
 
 ### Origin configuration
-![Step 13](./screenshots/13-cloudfront-origin-configuration.png)
+![Step 13](./aws-static-site-cloudfront/screenshots-projet-1/13-cloudfront-origin-configuration.png)
 
 ### Security settings
-![Step 14](./screenshots/14-cloudfront-security-settings.png)
+![Step 14](./aws-static-site-cloudfront/screenshots-projet-1/14-cloudfront-security-settings.png)
 
 ### Distribution deploying
-![Step 15](./screenshots/15-cloudfront-distribution-deploying.png)
+![Step 15](./aws-static-site-cloudfront/screenshots-projet-1/15-cloudfront-distribution-deploying.png)
 
 ### CloudFront live
-![Step 16](./screenshots/16-cloudfront-website-live.png)
+![Step 16](./aws-static-site-cloudfront/screenshots-projet-1/16-cloudfront-website-live.png)
 
 ### Default root object fix
-![Step 17](./screenshots/17-cloudfront-default-root-fixed.png)
+![Step 17](./aws-static-site-cloudfront/screenshots-projet-1/17-cloudfront-default-root-fixed.png)
 
 ---
 
-## 5️⃣ SSL Certificate (ACM)
+## 5️⃣ SSL Certificate with ACM
 
-### ACM Dashboard
-![Step 18](./screenshots/18-acm-dashboard.png)
+### ACM dashboard
+![Step 18](./aws-static-site-cloudfront/screenshots-projet-1/18-acm-dashboard.png)
 
 ### Domain configuration
-![Step 19](./screenshots/19-acm-domain-names.png)
+![Step 19](./aws-static-site-cloudfront/screenshots-projet-1/19-acm-domain-names.png)
 
-### CNAME records (AWS)
-![Step 20](./screenshots/20-acm-cname-records-1.png)
-![Step 20](./screenshots/20-acm-cname-records-2.png)
+### CNAME records generated by AWS
+![Step 20-1](./aws-static-site-cloudfront/screenshots-projet-1/20-acm-cname-records-1.png)
+![Step 20-2](./aws-static-site-cloudfront/screenshots-projet-1/20-acm-cname-records-2.png)
 
 ### DNS validation (Namecheap)
-![Step 21](./screenshots/21-namecheap-acm-validation.png)
+![Step 21](./aws-static-site-cloudfront/screenshots-projet-1/21-namecheap-acm-validation.png)
 
 ### Certificate issued
-![Step 22](./screenshots/22-acm-certificate-issued.png)
+![Step 22](./aws-static-site-cloudfront/screenshots-projet-1/22-acm-certificate-issued.png)
 
 ---
 
 ## 6️⃣ Custom Domain + HTTPS
 
 ### CloudFront domain configuration
-![Step 23](./screenshots/23-cloudfront-domain-config.png)
+![Step 23](./aws-static-site-cloudfront/screenshots-projet-1/23-cloudfront-domain-config.png)
 
 ### DNS setup (Namecheap → CloudFront)
-![Step 24](./screenshots/24-dns-namecheap-cloudfront.png)
+![Step 24](./aws-static-site-cloudfront/screenshots-projet-1/24-dns-namecheap-cloudfront.png)
 
 ### Final result (HTTPS working)
-![Step 25](./screenshots/25-final-domain-working.png)
+![Step 25](./aws-static-site-cloudfront/screenshots-projet-1/25-final-domain-working.png)
 
 ---
 
-# 🔥 Key Features
+## 🔥 Key Features
 
 - ✅ Static website hosting with S3  
 - ✅ Global CDN with CloudFront  
@@ -178,54 +203,36 @@ The goal was to build a **scalable, secure, and globally distributed web applica
 
 ---
 
-# 🧠 Challenges & Solutions
+## 🧠 Challenges & Solutions
 
-### ❌ S3 Access Denied (403)
-✔️ Fixed by applying a public bucket policy
+### ❌ S3 Access Denied (403)  
+✔️ Fixed by applying a public bucket policy  
 
-### ❌ CloudFront not loading index.html
-✔️ Fixed by setting **Default Root Object**
+### ❌ CloudFront not loading index.html  
+✔️ Fixed by setting the Default Root Object  
 
-### ❌ SSL validation stuck
-✔️ Fixed DNS CNAME configuration in Namecheap
+### ❌ SSL validation stuck  
+✔️ Fixed DNS CNAME configuration in Namecheap  
 
-### ❌ Git push rejected
-✔️ Solved using `git pull --rebase`
-
----
-
-# 💼 Skills Demonstrated
-
-- AWS S3 configuration
-- CDN architecture (CloudFront)
-- DNS management (Namecheap)
-- SSL/TLS setup (ACM)
-- Debugging production issues
-- Git & GitHub workflow
-- End-to-end cloud deployment
+### ❌ Git push rejected  
+✔️ Solved using `git pull --rebase`  
 
 ---
 
-# 🚀 Future Improvements
+## 💼 Skills Demonstrated
 
-- CI/CD pipeline (GitHub Actions)
-- Infrastructure as Code (Terraform)
-- Monitoring (CloudWatch)
-- Logging & alerting
-- Route 53 integration
-- WAF security layer
-
----
-
-# 📌 What I learned
-
-This project demonstrates the ability to design and deploy a **secure, scalable, and production-ready web architecture on AWS**.
-
-It highlights real-world problem-solving, cloud best practices, and DevOps fundamentals.
+- AWS S3 configuration  
+- CloudFront CDN architecture  
+- DNS management (Namecheap)  
+- SSL/TLS setup (ACM)  
+- Debugging production issues  
+- Git & GitHub workflow  
+- End-to-end cloud deployment  
 
 ---
 
-# 👨‍💻 Author
+# 🔄 Next Step — CI/CD Automation
 
-**Dassaev TCHOUTA**  
-Cloud / DevOps Enthusiast 🚀
+After completing the manual deployment, the next step is to automate the entire workflow using GitHub Actions.
+
+👉 This will be covered in **Part 2**.
