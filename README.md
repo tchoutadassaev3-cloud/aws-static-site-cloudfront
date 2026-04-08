@@ -94,13 +94,13 @@ This approach ensures a solid foundation before moving to automation.
 ## 1️⃣ Local Development & Build
 
 ### Project structure
-![Step 1](./aws-static-site-cloudfront/screenshots-projet-1/01-project-structure-local.png)
+![Step 1](./screenshots-projet-1/01-project-structure-local.png)
 
 ### Local preview
-![Step 2](./aws-static-site-cloudfront/screenshots-projet-1/02-local-development-preview.png)
+![Step 2](./screenshots-projet-1/02-local-development-preview.png)
 
 ### Production build
-![Step 3](./aws-static-site-cloudfront/screenshots-projet-1/03-production-build-dist-folder.png)
+![Step 3](./screenshots-projet-1/03-production-build-dist-folder.png)
 
 ---
 
