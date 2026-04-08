@@ -1,9 +1,9 @@
-# 🚀 End-to-End AWS Static Website Deployment  
+# End-to-End AWS Static Website Deployment  
 ## From Manual Setup to CI/CD Automation
 
 ---
 
-## 📖 Introduction
+## Introduction
 
 With several years of experience working with AWS, I have had the opportunity to interact with a wide range of cloud services in different contexts.
 
@@ -19,7 +19,7 @@ This repository is part of that journey a series of hands-on projects where I fo
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 This project demonstrates how to deploy a **secure, scalable, and globally distributed static website on AWS**, following real-world practices.
 
@@ -41,7 +41,7 @@ The goal is to demonstrate a full progression:
 
 ---
 
-## 🏗️ Global Architecture Overview
+## Global Architecture Overview
 
 ![Architecture](./architecture/26-architecture-diagram.png)
 
@@ -75,7 +75,7 @@ This architecture follows a modern cloud pattern:
 
 ---
 
-# 🧩 Part 1 — Manual Deployment on AWS
+# Part 1 — Manual Deployment on AWS
 
 ## 📌 Part 1 Overview
 
@@ -192,7 +192,7 @@ This approach ensures a solid foundation before moving to automation.
 
 ---
 
-## 🔥 Key Features
+## Key Features
 
 - ✅ Static website hosting with S3  
 - ✅ Global CDN with CloudFront  
@@ -219,7 +219,7 @@ This approach ensures a solid foundation before moving to automation.
 
 ---
 
-## 💼 Skills Demonstrated
+## Skills Demonstrated
 
 - AWS S3 configuration  
 - CloudFront CDN architecture  
@@ -243,7 +243,7 @@ This leads to the next phase of the project: **automating the entire deployment 
 
 ---
 
-# 🚀 Part 2 — CI/CD Automation with GitHub Actions
+# Part 2 — CI/CD Automation with GitHub Actions
 
 ## 🔄 From Manual Deployment to Automation
 
@@ -264,7 +264,7 @@ This phase focuses on transforming the deployment process into a fully automated
 
 ## ⚙️ CI/CD Architecture Overview
 
-![CI/CD Architecture](./architecture/16-ci-cd-architecture.png)
+![CI/CD Architecture](./architecture/16-cicd-architecture-diagram.png)
 
 ### 🔁 Pipeline Workflow
 
@@ -334,7 +334,7 @@ The distribution ID is required to trigger cache invalidation after deployment.
 
 ---
 
-## ⚙️ Step 7 — GitHub Actions Workflow Setup
+## Step 7 — GitHub Actions Workflow Setup
 
 ### Workflow File Creation
 
@@ -346,7 +346,7 @@ The distribution ID is required to trigger cache invalidation after deployment.
 
 ---
 
-## 🚀 Step 8 — Pipeline Execution
+## Step 8 — Pipeline Execution
 
 ### Workflow Triggered
 
@@ -371,7 +371,7 @@ After the pipeline execution, the changes were instantly reflected on the live w
 
 ---
 
-## ⚡ Step 10 — CloudFront Cache Invalidation
+## Step 10 — CloudFront Cache Invalidation
 
 CloudFront cache was successfully invalidated to ensure that users always receive the latest version of the website.
 
@@ -402,7 +402,7 @@ Instead of manually uploading files to S3, the system:
 
 ---
 
-## 🧠 What This Demonstrates
+## What This Demonstrates
 
 This project now showcases:
 
@@ -414,7 +414,7 @@ This project now showcases:
 
 ---
 
-# 📌 Final Conclusion
+# Final Conclusion
 
 This project demonstrates a complete end-to-end approach to cloud deployment on AWS.
 
